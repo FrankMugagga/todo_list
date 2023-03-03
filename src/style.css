@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: lightgray;
+  background: lightgragree;
 }
 
 * {
@@ -37,7 +37,8 @@ body {
 
 .input {
   height: 100%;
-  border: none;
+  width: 95%;
+  border: none; background: green;
 }
 
 .list {
