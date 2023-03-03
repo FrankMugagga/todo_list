@@ -62,8 +62,13 @@ body {
   
 }
 
+.btns {
+  border: none;
+  background: none;
+}
+
 .p {
-  margin-left: 10px;border: 2px solid red;
+  margin-left: 10px;
   width: 96%;
   height: 10%;
   margin-top: 0;
@@ -75,6 +80,7 @@ body {
   margin-bottom: 2px;
   margin-top: 0;
   border: none;
+  font-size: 30px;
 }
 
 .completed {
