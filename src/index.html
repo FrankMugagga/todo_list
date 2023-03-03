@@ -19,18 +19,27 @@
             <i class="fa fa-rotate"></i>
         </div>
 
-        <form class="formid" id="formid">
-            <input type="text" class="input" name="input" id="input" placeholder="Add to your list..." required>
-            <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
-        </form>
-  
-        <ul class="list" id="list">
-            
-        </ul>
-        <button type="reset" class="resetBtn">Clear all completed</button>
+        <div id="todo-list">
+            <form class="formid" id="todo-input">
+                <input type="text" id="new-todo" class="input" name="input"  placeholder="Add to your list..." required>
+                <button type="submit" id="add-todo"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </form>
+      
+           <ul class="list" id="todos"> 
+            <!-- <ul class="list" id="list"> -->
+                
+                
+            </ul>
+            <button id="clear-completed">Clear Completed</button>
+            <button id="clear-all">Clear All</button>
+            <button type="reset" id="clear-checked" class="resetBtn">Clear all completed</button>
+
+        </div>
+
+        
     </main>
 
-   <script src="index.js"></script>
+   <script type="module" src="index.js"></script>
 
 </body>
 </html>
