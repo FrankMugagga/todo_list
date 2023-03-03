@@ -1,14 +1,19 @@
-import { getTodos, saveTodos, clearTodos } from './modules/storage.js';
+import { getTodos, saveTodos } from './modules/storage.js';
 
 const todoInput = document.querySelector('#new-todo');
 const addTodoBtn = document.querySelector('#add-todo');
 const clearCheckedBtn = document.querySelector('#clear-checked');
-/*
-const clearCompletedBtn = document.querySelector('#clear-completed');
-const clearAllBtn = document.querySelector('#clear-all');*/
 const todosList = document.querySelector('#todos');
 
 let todos = getTodos();
+
+function renderTodos() {
+  todosList.innerHTML = '';
+  todos.forEach((todo, index) => {
+    todo.index = index;
+    todosList.appendChild(createTodoElement(todo));
+  });
+}
 
 function createTodoElement(todo) {
   const todoElement = document.createElement('li');
@@ -24,15 +29,11 @@ function createTodoElement(todo) {
       <button class="btns save-todo" style="display: none;">Save</button>
     </div>   
   `;
-  const editBtn = todoElement.querySelector('.fa-ellipsis-vertical');
   const todoTextElement = todoElement.querySelector('span');
   const editTodoButton = todoElement.querySelector('.edit-todo');
   const removeTodoButton = todoElement.querySelector('.remove-todo');
   const saveTodoButton = todoElement.querySelector('.save-todo');
-  /*todoTextElement.addEventListener('input', () => {
-    saveTodoButton.style.display = 'inline-block';
-  });*/
-  todoTextElement.addEventListener('keydown', event => {
+  todoTextElement.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       saveTodoButton.click();
@@ -58,9 +59,8 @@ function createTodoElement(todo) {
     todoElement.style.background = 'lightyellow';
     editTodoButton.style.display = 'none';
     removeTodoButton.style.display = 'inline-block';
-    //saveTodoButton.style.display = 'inline-block';
   });
-   todoElement.querySelector('button.remove-todo').addEventListener('click', () => {
+  todoElement.querySelector('button.remove-todo').addEventListener('click', () => {
     const index = todos.indexOf(todo);
     todos.splice(index, 1);
     saveTodos(todos);
@@ -72,14 +72,6 @@ function createTodoElement(todo) {
   return todoElement;
 }
 
-function renderTodos() {
-  todosList.innerHTML = '';
-  todos.forEach((todo, index) => {
-    todo.index = index;
-    todosList.appendChild(createTodoElement(todo));
-  });
-}
-
 addTodoBtn.addEventListener('click', () => {
   const task = todoInput.value.trim();
   if (task) {
@@ -89,16 +81,6 @@ addTodoBtn.addEventListener('click', () => {
     renderTodos();
   }
 });
-/*
-clearCompletedBtn.addEventListener('click', () => {
-  todos = todos.filter((todo) => !todo.completed);
-  saveTodos(todos);
-  todos.forEach((todo, index) => {
-    todo.index = index;
-  });
-  renderTodos();
-});*/
-
 clearCheckedBtn.addEventListener('click', () => {
   todos = todos.filter((todo) => !todo.completed);
   saveTodos(todos);
@@ -107,11 +89,5 @@ clearCheckedBtn.addEventListener('click', () => {
   });
   renderTodos();
 });
-/*
-clearAllBtn.addEventListener('click', () => {
-  clearTodos();
-  todos = [];
-  renderTodos();
-});*/
 
 renderTodos();

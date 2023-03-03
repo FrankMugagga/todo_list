@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/2649a194d9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>Todo list</title>
 <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
 <body>
@@ -19,18 +19,25 @@
             <i class="fa fa-rotate"></i>
         </div>
 
-        <form class="formid" id="formid">
-            <input type="text" class="input" name="input" id="input" placeholder="Add to your list..." required>
-            <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
-        </form>
-  
-        <ul class="list" id="list">
-            
-        </ul>
-        <button type="reset" class="resetBtn">Clear all completed</button>
+        <div id="todo-list">
+            <form class="formid" id="todo-input">
+                <input type="text" id="new-todo" class="input" name="input"  placeholder="Add to your list..." required>
+                <button class="btns" type="submit" id="add-todo"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </form>
+      
+           <ul class="list" id="todos">                           
+                
+            </ul>
+            <!--<button id="clear-completed">Clear Completed</button>
+            <button id="clear-all">Clear All</button> -->
+            <button type="reset" id="clear-checked" class="resetBtn">Clear all completed</button>
+
+        </div>
+
+        
     </main>
 
-   <script src="index.js"></script>
+   <script type="module" src="index.js"></script>
 
 </body>
 </html>
