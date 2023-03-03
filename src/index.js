@@ -74,7 +74,7 @@ addTodoBtn.addEventListener('click', () => {
 });
 
 clearCompletedBtn.addEventListener('click', () => {
-  todos = todos.filter(todo => !todo.completed);
+  todos = todos.filter((todo) => !todo.completed);
   saveTodos(todos);
   todos.forEach((todo, index) => {
     todo.index = index;
@@ -83,7 +83,7 @@ clearCompletedBtn.addEventListener('click', () => {
 });
 
 clearCheckedBtn.addEventListener('click', () => {
-  todos = todos.filter(todo => !todo.completed);
+  todos = todos.filter((todo) => !todo.completed);
   saveTodos(todos);
   todos.forEach((todo, index) => {
     todo.index = index;

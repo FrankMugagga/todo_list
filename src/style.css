@@ -10,13 +10,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.formid,
-.head_cont {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .todo {
   box-sizing: border-box;
   display: flex;
@@ -28,15 +21,13 @@ body {
 }
 
 .head_cont,
-.formid,
-.resetBtn {
+.formid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 40px;
   width: 100%;
   margin-bottom: 2px;
-}
-
-.formid,
-.head_cont {
   border-bottom: 2px solid lightgray;
 }
 
@@ -73,6 +64,9 @@ p {
 }
 
 .resetBtn {
+  height: 40px;
+  width: 100%;
+  margin-bottom: 2px;
   margin-top: 0;
   border: none;
 }
