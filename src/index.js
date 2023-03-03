@@ -2,27 +2,40 @@ import { getTodos, saveTodos, clearTodos } from './modules/storage.js';
 
 const todoInput = document.querySelector('#new-todo');
 const addTodoBtn = document.querySelector('#add-todo');
-const clearCompletedBtn = document.querySelector('#clear-completed');
 const clearCheckedBtn = document.querySelector('#clear-checked');
-const clearAllBtn = document.querySelector('#clear-all');
+/*
+const clearCompletedBtn = document.querySelector('#clear-completed');
+const clearAllBtn = document.querySelector('#clear-all');*/
 const todosList = document.querySelector('#todos');
 
 let todos = getTodos();
 
 function createTodoElement(todo) {
   const todoElement = document.createElement('li');
-  todoElement.innerHTML = `
-    <input type="checkbox" ${todo.completed ? 'checked' : ''}>
-    <span contenteditable="true" class="${todo.completed ? 'completed' : ''}">${todo.task}</span>
-    <button class="edit-todo">Edit</button>
-    <button class="remove-todo">Remove</button>
-    <button class="save-todo" style="display: none;">Save</button>
+  todoElement.classList.add('list_item');
+    todoElement.innerHTML = `
+    <div class='list_con'>
+      <input type="checkbox" ${todo.completed ? 'checked' : ''}>
+      <span class='p' contenteditable="true" class="${todo.completed ? 'completed' : ''}">${todo.task}</span>    
+    </div>
+    <div>
+      <button class="edit-todo"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+      <button class="remove-todo"><i class="fa-solid fa-trash-can"></i></button>
+      <button class="save-todo" style="display: none;">Save</button>
+    </div>   
   `;
+  const editBtn = todoElement.querySelector('fa-ellipsis-vertical');
   const todoTextElement = todoElement.querySelector('span');
   const editTodoButton = todoElement.querySelector('.edit-todo');
   const saveTodoButton = todoElement.querySelector('.save-todo');
-  todoTextElement.addEventListener('input', () => {
+  /*todoTextElement.addEventListener('input', () => {
     saveTodoButton.style.display = 'inline-block';
+  });*/
+  todoTextElement.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      saveTodoButton.click();
+    }
   });
   saveTodoButton.addEventListener('click', () => {
     todo.task = todoTextElement.textContent.trim();
@@ -41,7 +54,9 @@ function createTodoElement(todo) {
   editTodoButton.addEventListener('click', () => {
     todoTextElement.contentEditable = true;
     todoTextElement.focus();
-    saveTodoButton.style.display = 'inline-block';
+    todoElement.style.background = 'lightyellow';
+    editBtn.style.display = 'none';
+    //saveTodoButton.style.display = 'inline-block';
   });
   todoElement.querySelector('button.remove-todo').addEventListener('click', () => {
     const index = todos.indexOf(todo);
@@ -72,7 +87,7 @@ addTodoBtn.addEventListener('click', () => {
     renderTodos();
   }
 });
-
+/*
 clearCompletedBtn.addEventListener('click', () => {
   todos = todos.filter((todo) => !todo.completed);
   saveTodos(todos);
@@ -80,7 +95,7 @@ clearCompletedBtn.addEventListener('click', () => {
     todo.index = index;
   });
   renderTodos();
-});
+});*/
 
 clearCheckedBtn.addEventListener('click', () => {
   todos = todos.filter((todo) => !todo.completed);
@@ -90,11 +105,11 @@ clearCheckedBtn.addEventListener('click', () => {
   });
   renderTodos();
 });
-
+/*
 clearAllBtn.addEventListener('click', () => {
   clearTodos();
   todos = [];
   renderTodos();
-});
+});*/
 
 renderTodos();

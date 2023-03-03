@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: lightgragree;
+  background: lightgray;
 }
 
 * {
@@ -38,7 +38,7 @@ body {
 .input {
   height: 100%;
   width: 95%;
-  border: none; background: green;
+  border: none;
 }
 
 .list {
@@ -58,10 +58,15 @@ body {
 
 .list_con {
   display: flex;
+  width: 80%;
+  
 }
 
-p {
-  margin-left: 10px;
+.p {
+  margin-left: 10px;border: 2px solid red;
+  width: 96%;
+  height: 10%;
+  margin-top: 0;
 }
 
 .resetBtn {
