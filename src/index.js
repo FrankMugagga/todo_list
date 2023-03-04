@@ -7,20 +7,12 @@ const todosList = document.querySelector('#todos');
 
 let todos = getTodos();
 
-function renderTodos() {
-  todosList.innerHTML = '';
-  todos.forEach((todo, index) => {
-    todo.index = index;
-    todosList.appendChild(createTodoElement(todo));
-  });
-}
-
 function createTodoElement(todo) {
   const todoElement = document.createElement('li');
   todoElement.classList.add('list_item');
   todoElement.innerHTML = `
     <div class='list_con'>
-      <input type="checkbox" ${todo.completed ? 'checked' : ''}>
+      <input class="input1" type="checkbox" ${todo.completed ? 'checked' : ''}>
       <span class='p' contenteditable="true" class="${todo.completed ? 'completed' : ''}">${todo.task}</span>    
     </div>
     <div>
@@ -55,7 +47,6 @@ function createTodoElement(todo) {
   });
   editTodoButton.addEventListener('click', () => {
     todoTextElement.contentEditable = true;
-    todoTextElement.focus();
     todoElement.style.background = 'lightyellow';
     editTodoButton.style.display = 'none';
     removeTodoButton.style.display = 'inline-block';
@@ -67,11 +58,21 @@ function createTodoElement(todo) {
     todos.forEach((todo, index) => {
       todo.index = index;
     });
-    renderTodos();
+    todosList.innerHTML = '';
+    todos.forEach((todo, index) => {
+      todo.index = index;
+      todosList.appendChild(createTodoElement(todo));
+    });
   });
   return todoElement;
 }
-
+function renderTodos() {
+  todosList.innerHTML = '';
+  todos.forEach((todo, index) => {
+    todo.index = index;
+    todosList.appendChild(createTodoElement(todo));
+  });
+}
 addTodoBtn.addEventListener('click', () => {
   const task = todoInput.value.trim();
   if (task) {

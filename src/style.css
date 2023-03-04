@@ -73,6 +73,11 @@ body {
   margin-top: 0;
 }
 
+.p:focus,
+input:focus {
+  outline: none;
+}
+
 .resetBtn {
   height: 40px;
   width: 100%;
