@@ -5,7 +5,7 @@
  
  
 
-  <h3><b>To Do list: List structure</b></h3>
+  <h3><b>To Do list: List interactive</b></h3>
 
 </div>
 
