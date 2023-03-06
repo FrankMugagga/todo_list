@@ -1,17 +1,4 @@
-import { toLocalStorage, fromLocalStorage } from './modules/storage.js';
-
-const form = document.getElementById('list_form');
-const toAdd = document.getElementById('toAdd');
-const listCont = document.getElementById('list');
-const clearSelected = document.getElementById('clear_selected');
-
-function displayList() {
-    const list = fromLocalStorage();
-    listCont.innerHTML = '';
-    list.forEach((item, listIndex) => {
-        const li = document.createElement('li');
-        li.dataset.index = item.index;
-        li.classList.add('list_item');
+import { getTodos, saveTodos } from './modules/storage.js';
 
         const checkLabel = document.createElement('div');
         checkLabel.classList.add('list_con');     
