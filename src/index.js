@@ -1,4 +1,5 @@
 import { getTodos, saveTodos } from './modules/storage.js';
+import './style.css';
 
 const todoInput = document.querySelector('#new-todo');
 const addTodoBtn = document.querySelector('#add-todo');

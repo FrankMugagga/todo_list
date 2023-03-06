@@ -10,7 +10,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.todo {
+.container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ body {
 }
 
 .head_cont,
-.formid {
+.list_form {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,9 +35,10 @@ body {
   color: black;
 }
 
-.input {
-  height: 100%;
-  width: 95%;
+.toAdd {
+  height: 40px;
+  width: 96%;
+  font-size: 20px;
   border: none;
 }
 
@@ -53,40 +54,46 @@ body {
   justify-content: space-between;
   height: 40px;
   align-items: center;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid lightgray;  
 }
 
 .list_con {
   display: flex;
-  width: 80%;
+  width: 90%;
+  height: 40px;
 }
 
-.btns {
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 20px;
+  width: 98%;
+
+  margin-left: 10px;
+}
+
+.button_cont {
+  display: flex;
+}
+
+.remove_btn {
+  display: none; 
+}
+
+.submit_list,
+.edit_btn,
+.remove_btn,
+.button_cont 
+{
   border: none;
   background: none;
 }
 
-.p {
-  margin-left: 10px;
-  width: 96%;
-  height: 10%;
-  margin-top: 0;
-}
-
-.p:focus,
-input:focus {
-  outline: none;
-}
-
-.resetBtn {
+.clear_selected {
   height: 40px;
-  width: 100%;
-  margin-bottom: 2px;
-  margin-top: 0;
   border: none;
-  font-size: 30px;
-}
-
-.completed {
-  text-decoration: line-through;
+  border-bottom: 2px solid lightgray;
+  font-size: 20px;
 }
