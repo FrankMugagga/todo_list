@@ -13,29 +13,23 @@
 <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
 <body>
 
-    <main class="todo">
-        <div class="head_cont">
-            <h2 class="heading">Today's To Do</h2>
-            <i class="fa fa-rotate"></i>
-        </div>
-
-        <div id="todo-list">
-            <form class="formid" id="todo-input">
-                <input type="text" id="new-todo" class="input" name="input"  placeholder="Add to your list..." required>
-                <button class="btns" type="submit" id="add-todo"><i class="fa fa-plus" aria-hidden="true"></i></button>
-            </form>
-      
-           <ul class="list" id="todos">                           
-                
-            </ul>
-            <button type="reset" id="clear-checked" class="resetBtn">Clear all completed</button>
-
-        </div>
-
-        
+    <main class="container">
+      <div class="head_cont">
+        <h2 class="heading"> Today's To Do </h2>
+        <i class="fa-solid fa-rotate"></i>
+      </div>
+  
+      <form action="" class="list_form" id="list_form">
+        <input type="text" class="toAdd" id="toAdd" placeholder="Add to your list..." required>
+        <button type="submit" class="submit_list"><i class="fa-regular fa-circle-check"></i></button>
+      </form>
+  
+      <ul class="list" id="list"></ul>
+  
+      <button class="clear_selected" id="clear_selected">Clear all completed</button>
     </main>
-
-   <script type="module" src="index.js"></script>
-
-</body>
-</html>
+  
+    <script type="module" src="index.js"></script>
+   
+  </body>
+  </html>
