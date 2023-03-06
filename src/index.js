@@ -80,6 +80,13 @@ function displayList() {
       li.style.background = 'yellow';
       removeButton.style.display = 'block';
       editButton.style.display = 'none';
+      document.addEventListener('click', (e) => {
+        const isClickInside = removeButton.contains(e.target);
+        if (!isClickInside) {
+          removeButton.style.display = 'none';
+          editButton.style.display = 'block';
+        }
+      });
 
       labelElement.contentEditable = true;
       labelElement.addEventListener('keydown', (e) => {
@@ -91,8 +98,7 @@ function displayList() {
       });
 
       document.addEventListener('click', (e) => {
-        const isClickInside = removeButton.contains(e.target)
-        || li.contains(e.target) || labelElement.contains(e.target);
+        const isClickInside = li.contains(e.target) || labelElement.contains(e.target);
         if (!isClickInside) {
           labelElement.contentEditable = false;
           li.style.background = 'none';
@@ -106,7 +112,7 @@ function displayList() {
       list.splice(listIndex, 1);
       localStorage.setItem('list', JSON.stringify(list));
 
-      for (let i = 0; i < list.length; i = +1) {
+      for (let i = 0; i < list.length; i += 1) {
         list[i].index = i + 1;
         localStorage.setItem('list', JSON.stringify(list));
       }
@@ -134,7 +140,7 @@ clearSelected.addEventListener('click', () => {
   list = list.filter((item) => !item.completed);
   localStorage.setItem('list', JSON.stringify(list));
 
-  for (let i = 0; i < list.length; i = +1) {
+  for (let i = 0; i < list.length; i += 1) {
     const list = JSON.parse(localStorage.getItem('list')) || [];
     list[i].index = i + 1;
     localStorage.setItem('list', JSON.stringify(list));
