@@ -1,5 +1,5 @@
 import { toLocalStorage } from './modules/storage.js';
-import { displayList } from './modules/display.js';
+import displayList from './modules/display.js';
 import './style.css';
 
 const form = document.getElementById('list_form');

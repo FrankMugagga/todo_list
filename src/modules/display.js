@@ -2,7 +2,7 @@ import { fromLocalStorage } from './storage.js';
 
 const listCont = document.getElementById('list');
 
-export function displayList() {
+export default function displayList() {
   const list = fromLocalStorage();
   listCont.innerHTML = '';
   list.forEach((item, listIndex) => {
