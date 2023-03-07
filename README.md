@@ -6,7 +6,7 @@
  
 
 
-  <h3><b>To Do list: Add and Remove</b></h3>
+  <h3><b>To Do list</b></h3>
 
 
 </div>
@@ -37,11 +37,11 @@
 
 
 
-# 📖 [To Do list: Add and Remove] <a name="about-project"></a>
+# 📖 [To Do list] <a name="about-project"></a>
 
 Describe your project in 1 or 2 sentences.
 
-**[To Do list: Add and Remove]** is an application that shows how a to do list will look like with functionalities to delete, add and toggle a list
+**[To Do list]** is an application that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 ## 🛠 Built With <a name="built-with"></a>
 
 - Html
@@ -56,7 +56,7 @@ Describe the tech stack and include only the relevant sections that apply to you
 <details>
   <summary>Client</summary>
   <ul>
-    <li>HTML, CSS, JAVASCRIPT,WEBPACK</li>
+    <li>HTML, CSS, JAVASCRIPT, WEBPACK</li>
   </ul>
 </details>
 
@@ -64,8 +64,9 @@ Describe the tech stack and include only the relevant sections that apply to you
 
 Describe between 1-3 key features of the application.
 
-- **[Single page Application]**
+**[Single page Application]**
  **[Built using webpack NPM]**
+ 
 
 
 
@@ -106,7 +107,7 @@ Install this project with:
 Example command:
 
 ```sh
-  cd my-project
+  cd my-todoList
 ```
 
 
@@ -133,9 +134,9 @@ Mention all of the collaborators of this project.
 
 Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Todo list: add and remove]**
- **[Interactive list]**
-
+ **[Adding and remove an item]**
+ **[Marking a selected item as complete]**
+ **[Removing all items marked as complete at once]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,7 +166,7 @@ If you like this project, you can share it on social media
 
  Give credit to everyone who inspired your codebase.
 
-I would like to thank ChatGPT for explanations on haw to run the code and about the different ineractions
+I would like to thank ChatGPT for the precise explanations on haw to run the code and about the different interactions
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
