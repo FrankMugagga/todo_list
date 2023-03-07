@@ -1,11 +1,12 @@
-import { toLocalStorage, fromLocalStorage } from './modules/storage.js';
-import './style.css';
+import { toLocalStorage } from './modules/storage.js';
+import displayList from './modules/display.js';
+// import './style.css';
 
 const form = document.getElementById('list_form');
 const toAdd = document.getElementById('toAdd');
-const listCont = document.getElementById('list');
+// const listCont = document.getElementById('list');
 const clearSelected = document.getElementById('clear_selected');
-
+/*
 function displayList() {
   const list = fromLocalStorage();
   listCont.innerHTML = '';
@@ -80,8 +81,9 @@ function displayList() {
       li.style.background = 'yellow';
       removeButton.style.display = 'block';
       editButton.style.display = 'none';
+
       document.addEventListener('click', (e) => {
-        const isClickInside = removeButton.contains(e.target);
+        const isClickInside = removeButton.contains(e.target) || editButton.contains(e.target);
         if (!isClickInside) {
           removeButton.style.display = 'none';
           editButton.style.display = 'block';
@@ -95,6 +97,7 @@ function displayList() {
           list[listIndex].description = labelElement.textContent;
           localStorage.setItem('list', JSON.stringify(list));
         }
+
       });
 
       document.addEventListener('click', (e) => {
@@ -102,8 +105,6 @@ function displayList() {
         if (!isClickInside) {
           labelElement.contentEditable = false;
           li.style.background = 'none';
-          removeButton.style.display = 'none';
-          editButton.style.display = 'block';
         }
       });
     });
@@ -122,7 +123,7 @@ function displayList() {
 
     listCont.appendChild(li);
   });
-}
+} */
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
