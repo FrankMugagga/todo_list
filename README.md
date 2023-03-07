@@ -5,7 +5,9 @@
  
  
 
-  <h3><b>To Do list: List interactive</b></h3>
+
+  <h3><b>To Do list: Add and Remove</b></h3>
+
 
 </div>
 
@@ -35,16 +37,17 @@
 
 
 
-# 📖 [To Do list: List structure] <a name="about-project"></a>
+# 📖 [To Do list: Add and Remove] <a name="about-project"></a>
 
 Describe your project in 1 or 2 sentences.
 
-**[To Do list: List structure]** is an application that shows how a to do list will look like with functionalities to delete, add and toggle a list
+**[To Do list: Add and Remove]** is an application that shows how a to do list will look like with functionalities to delete, add and toggle a list
 ## 🛠 Built With <a name="built-with"></a>
 
 - Html
 - CSS
 - Javascript
+- Webpack
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -53,7 +56,7 @@ Describe the tech stack and include only the relevant sections that apply to you
 <details>
   <summary>Client</summary>
   <ul>
-    <li>HTML, CSS, JAVASCRIPT</li>
+    <li>HTML, CSS, JAVASCRIPT,WEBPACK</li>
   </ul>
 </details>
 
@@ -62,6 +65,7 @@ Describe the tech stack and include only the relevant sections that apply to you
 Describe between 1-3 key features of the application.
 
 - **[Single page Application]**
+ **[Built using webpack NPM]**
 
 
 
@@ -129,8 +133,8 @@ Mention all of the collaborators of this project.
 
 Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Basic html,css and JS]**
- **[]**
+- [ ] **[Todo list: add and remove]**
+ **[Interactive list]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -161,7 +165,7 @@ If you like this project, you can share it on social media
 
  Give credit to everyone who inspired your codebase.
 
-I would like to thank..
+I would like to thank ChatGPT for explanations on haw to run the code and about the different ineractions
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
