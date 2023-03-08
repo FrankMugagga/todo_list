@@ -78,9 +78,7 @@ Describe between 1-3 key features of the application.
 
 
 - [Link](https://github.com/FrankMugagga/todo_list)
-[Video Link](https://frankmugagga.github.io/todo_list/dist/)
--
-
+-[Video Link](https://frankmugagga.github.io/todo_list/dist/)
 
 
  
