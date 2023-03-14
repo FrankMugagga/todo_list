@@ -1,6 +1,6 @@
 import displayList from './modules/display.js';
 import { inputValue, clearSelectOnly } from './modules/eventListeners.js';
-import './style.css';
+// import './style.css';
 
 const form = document.getElementById('list_form');
 const clearSelected = document.getElementById('clear_selected');
