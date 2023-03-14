@@ -1,6 +1,6 @@
 import { toLocalStorage } from './modules/storage.js';
 import displayList from './modules/display.js';
-import './style.css';
+//import './style.css';
 
 const form = document.getElementById('list_form');
 const toAdd = document.getElementById('toAdd');
