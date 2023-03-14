@@ -28,20 +28,6 @@ export default function displayList() {
     labelElement.contentEditable = false;
     checkLabel.appendChild(labelElement);
 
-    window.addEventListener('DOMContentLoaded', () => {
-      if (checkBoxElement.checked) {
-        list[listIndex].completed = true;
-        localStorage.setItem('list', JSON.stringify(list));
-        labelElement.style.textDecoration = 'line-through';
-        labelElement.style.color = 'red';
-      } else {
-        list[listIndex].completed = false;
-        localStorage.setItem('list', JSON.stringify(list));
-        labelElement.style.color = 'green';
-        labelElement.style.textDecoration = 'none';
-      }
-    });
-
     const buttonCont = document.createElement('div');
     buttonCont.classList.add('button_cont');
     li.appendChild(buttonCont);
@@ -58,7 +44,7 @@ export default function displayList() {
     removeButton.innerHTML = '<i class="fa-sharp fa-solid fa-trash"></i>';
     buttonCont.appendChild(removeButton);
 
-    checkBoxElement.addEventListener('change', () => {
+    const checkBoxFunc = () => {
       if (checkBoxElement.checked) {
         list[listIndex].completed = true;
         localStorage.setItem('list', JSON.stringify(list));
@@ -70,40 +56,46 @@ export default function displayList() {
         labelElement.style.color = 'green';
         labelElement.style.textDecoration = 'none';
       }
-    });
+    };
 
-    editButton.addEventListener('click', () => {
+    const removeTarget = (e) => {
+      const isClickInside = removeButton.contains(e.target) || editButton.contains(e.target);
+      if (!isClickInside) {
+        removeButton.style.display = 'none';
+        editButton.style.display = 'block';
+      }
+    };
+
+    const labelTarget = (e) => {
+      const isClickInside = li.contains(e.target) || labelElement.contains(e.target);
+      if (!isClickInside) {
+        labelElement.contentEditable = false;
+        li.style.background = 'none';
+      }
+    };
+
+    const editSave = (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        list[listIndex].description = labelElement.textContent;
+        localStorage.setItem('list', JSON.stringify(list));
+      }
+    };
+
+    const editFunc = () => {
       li.style.background = 'yellow';
       removeButton.style.display = 'block';
       editButton.style.display = 'none';
 
-      document.addEventListener('click', (e) => {
-        const isClickInside = removeButton.contains(e.target) || editButton.contains(e.target);
-        if (!isClickInside) {
-          removeButton.style.display = 'none';
-          editButton.style.display = 'block';
-        }
-      });
+      document.addEventListener('click', removeTarget);
 
       labelElement.contentEditable = true;
-      labelElement.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          list[listIndex].description = labelElement.textContent;
-          localStorage.setItem('list', JSON.stringify(list));
-        }
-      });
+      labelElement.addEventListener('keydown', editSave);
 
-      document.addEventListener('click', (e) => {
-        const isClickInside = li.contains(e.target) || labelElement.contains(e.target);
-        if (!isClickInside) {
-          labelElement.contentEditable = false;
-          li.style.background = 'none';
-        }
-      });
-    });
+      document.addEventListener('click', labelTarget);
+    };
 
-    removeButton.addEventListener('click', () => {
+    const removeFunc = () => {
       list.splice(listIndex, 1);
       localStorage.setItem('list', JSON.stringify(list));
 
@@ -113,7 +105,15 @@ export default function displayList() {
       }
 
       listCont.removeChild(li);
-    });
+    };
+
+    window.addEventListener('DOMContentLoaded', checkBoxFunc);
+
+    checkBoxElement.addEventListener('change', checkBoxFunc);
+
+    editButton.addEventListener('click', editFunc);
+
+    removeButton.addEventListener('click', removeFunc);
 
     listCont.appendChild(li);
   });
