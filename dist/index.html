@@ -14,19 +14,21 @@
 <body>
 
     <main class="container">
-      <div class="head_cont">
-        <h2 class="heading"> Todays To Do </h2>
+      <header class="head_cont">
+        <h2 class="heading"> Today's To Do </h2>
         <i class="fa-solid fa-rotate"></i>
-      </div>
+      </header>
   
       <form action="" class="list_form" id="list_form">
-        <input type="text" class="toAdd" id="toAdd" placeholder="Add to your list.." required>
+        <label for="toAdd" hidden>Add to your list...</label>
+        <input type="text" class="toAdd" id="toAdd" placeholder="Add to your list..." required>
         <button type="submit" class="submit_list"><i class="fa-regular fa-circle-check"></i></button>
       </form>
   
       <ul class="list" id="list"></ul>
-  
       <button class="clear_selected" id="clear_selected">Clear all completed</button>
+  
+      <footer> </footer>
     </main>
   
     <script type="module" src="index.js"></script>
