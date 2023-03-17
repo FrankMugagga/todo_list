@@ -107,6 +107,8 @@ export default function displayList() {
       listCont.removeChild(li);
     };
 
+    //module.exports = removeFunc;
+
     window.addEventListener('DOMContentLoaded', checkBoxFunc);
 
     checkBoxElement.addEventListener('change', checkBoxFunc);
