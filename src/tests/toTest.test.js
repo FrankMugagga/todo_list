@@ -36,10 +36,23 @@ describe('Removing an item', () => {
 
     removeFunc(1);
 
+    document.body.innerHTML += `
+    <ul id="listed">  <ul>`;
+    const listy = JSON.parse(localStorage.getItem('list'));
+    const listed = document.getElementById('listed');
+    let items = '';
+    listy.forEach((item) => {
+      items += `
+        <li>${item.description}</li>
+        `;
+    });
+    listed.innerHTML = items;
+
     const expectedList = [
       { description: 'item 1', completed: false, index: 1 },
       { description: 'item 3', completed: false, index: 2 },
     ];
     expect(JSON.parse(localStorage.getItem('list'))).toEqual(expectedList);
+    expect(listed.children.length).toBe(2);
   });
 });
