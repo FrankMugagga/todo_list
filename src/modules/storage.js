@@ -8,7 +8,7 @@ export function toLocalStorage(toAdd) {
 
   list.push(listObject);
   localStorage.setItem('list', JSON.stringify(list));
-  //localStorage.removeItem('todoList');
+  // localStorage.removeItem('todoList');
 
   return list;
 }
